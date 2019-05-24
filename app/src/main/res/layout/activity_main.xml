@@ -46,7 +46,7 @@
             android:layout_width="224dp"
             android:layout_height="match_parent"
             android:gravity="center|start"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <EditText
                 android:id="@+id/Username_input"
@@ -63,7 +63,6 @@
                 android:autofillHints="@string/password"
                 android:hint="@string/pw"
                 android:inputType="textPassword" />
-
 
 
         </LinearLayout>
