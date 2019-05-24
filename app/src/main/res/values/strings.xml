@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">SA Test</string>
+    <string name="textview">TextView</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+    <string name="button">Button</string>
+    <string name="pw">輸入密碼</string>
+    <string name="un">輸入帳號</string>
+    <string name="title_activity_sign_up">SignUp</string>
+    <string name="e_mail">e-mail</string>
+    <string name="confirn_password">Confirn password</string>
+    <string name="email">輸入信箱</string>
+    <string name="register">register</string>
+    <string name="註冊">註冊</string>
+    <string name="login">Login</string>
+</resources>
