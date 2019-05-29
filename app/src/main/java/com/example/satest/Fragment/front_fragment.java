@@ -17,6 +17,6 @@ public class front_fragment extends Fragment {
         return inflater.inflate(R.layout.front_fragment, container,false);
     }
 
-
+//QQ
 
 }
