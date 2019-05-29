@@ -7,11 +7,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.satest.Fragment.Front;
+
 public class MainActivity extends AppCompatActivity {
 
     private EditText Username_input;
     private EditText Passward_input;
     private Button Signup;
+    private Button Login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,12 +29,24 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(MainActivity.this  , SignUp.class);
+                intent.setClass(MainActivity.this, SignUp.class);
                 startActivity(intent);
-
-
             }
         });
+
+        Login = (Button) findViewById(R.id.Login);
+        Login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, Front.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+
 
     }
 }

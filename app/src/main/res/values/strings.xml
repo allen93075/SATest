@@ -13,4 +13,11 @@
     <string name="register">register</string>
     <string name="註冊">註冊</string>
     <string name="login">Login</string>
+    <string name="title_activity_front">Front</string>
+    <string name="title_home">Home</string>
+    <string name="title_account">account</string>
+    <string name="title_upload">upload</string>
+    <string name="Upload">upload</string>
+    <string name="account">Account</string>
+    <string name="upload">Upload</string>
 </resources>
