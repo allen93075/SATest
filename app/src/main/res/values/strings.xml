@@ -20,4 +20,8 @@
     <string name="Upload">upload</string>
     <string name="account">Account</string>
     <string name="upload">Upload</string>
+    <string name="back">返回</string>
+    <string name="load">上傳</string>
+    <string name="choose_p">選擇圖片</string>
+    <string name="open">公開</string>
 </resources>
