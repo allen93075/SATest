@@ -2,7 +2,7 @@ package com.example.satest.Retrofit;
 
 import java.util.List;
 
-public class User_data  {
+public class User_data {
 
 
     /**
@@ -11,7 +11,7 @@ public class User_data  {
      */
 
     private String offset;
-    //private List<RecordsBean> records;
+    private List<RecordsBean> records;
 
     public String getOffset() {
         return offset;
@@ -21,15 +21,15 @@ public class User_data  {
         this.offset = offset;
     }
 
-    //public List<RecordsBean> getRecords() {
-    //    return records;
-    //}
+    public List<RecordsBean> getRecords() {
+        return records;
+    }
 
-    //public void setRecords(List<RecordsBean> records) {
-        //this.records = records;
-    //}
+    public void setRecords(List<RecordsBean> records) {
+        this.records = records;
+    }
 
-
+    public static class RecordsBean {
         /**
          * id : recfgeZOansiNUD5A
          * fields : {"Username":"Kevin Chao","User_id":"kevinichao","Account":["rec7hCaPLPEj6yrdR"],"Password":"12345678","Following":["recaga9ZOKEPLMA4E"],"Image":["recoCVJz3rIwJnt0l","rec7OG23uUAsgNE5t"],"email":"kevin.i.chao@gmail.com","Phone":"+886978877385"}
@@ -37,7 +37,7 @@ public class User_data  {
          */
 
         private String id;
-        //private FieldsBean fields;
+        private FieldsBean fields;
         private String createdTime;
 
         public String getId() {
@@ -48,13 +48,13 @@ public class User_data  {
             this.id = id;
         }
 
-        //public FieldsBean getFields() {
-            //return fields;
-        //}
+        public FieldsBean getFields() {
+            return fields;
+        }
 
-        //public void setFields(FieldsBean fields) {
-            //this.fields = fields;
-        //}
+        public void setFields(FieldsBean fields) {
+            this.fields = fields;
+        }
 
         public String getCreatedTime() {
             return createdTime;
@@ -64,7 +64,7 @@ public class User_data  {
             this.createdTime = createdTime;
         }
 
-
+        public static class FieldsBean {
             /**
              * Username : Kevin Chao
              * User_id : kevinichao
@@ -148,6 +148,6 @@ public class User_data  {
             public void setImage(List<String> Image) {
                 this.Image = Image;
             }
-
-
+        }
+    }
 }

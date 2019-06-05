@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private Button Signup;
     private Button Login;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,14 +72,14 @@ public class MainActivity extends AppCompatActivity {
                     public void onResponse(Call<List<User_data>> call, Response<List<User_data>> response) {
 
                         List<User_data> list = response.body();
-//                        for (User_data p : list) {
-//                            sb.append("OOOAAAAOOO");
-//                            sb.append(list);
-//                            sb.append("\n");
-//                            sb.append("---------------------\n");
-//                        }
-                        sb.append(list);
+
+                        for (User_data p : list) {
+                            sb.append(p.getRecords());
+                            sb.append("\n");
+                            sb.append("---------------------\n");
+                        }
                         tv3.setText(sb);
+
                     }
 
                     @Override
