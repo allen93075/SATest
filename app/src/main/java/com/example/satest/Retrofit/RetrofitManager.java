@@ -9,7 +9,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitManager {
 
 
-
     private static RetrofitManager manager = new RetrofitManager();
     private Retrofit retrofit;
     private OkHttpClient okHttpClient;
