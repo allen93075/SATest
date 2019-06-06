@@ -2,10 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.satest">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-
-
-
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -15,8 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".ui.login.LoginActivity"
+            android:label="@string/title_activity_login"></activity>
+        <activity
             android:name=".Fragment.Front"
-            android:label="@string/title_activity_front"></activity>
+            android:label="@string/title_activity_front" />
         <activity
             android:name=".SignUp"
             android:label="@string/title_activity_sign_up"

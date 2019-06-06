@@ -1,8 +1,10 @@
 package com.example.satest;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,6 +21,12 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
+
 public class MainActivity extends AppCompatActivity {
 
     private EditText Username_input;
@@ -30,11 +38,22 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        db.collection("User")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                Log.d(TAG, document.getId() + " => " + document.getData());
+                            }
+                        } else {
+                            Log.w(TAG, "Error getting documents.", task.getException());
+                        }
+                    }
+                });
 
-
-        Username_input = (EditText) findViewById(R.id.Username_input);
-        Passward_input = (EditText) findViewById(R.id.Password_input);
-        Signup = (Button) findViewById(R.id.Signup);
 
 
 //        Signup.setOnClickListener(new View.OnClickListener() {
@@ -94,4 +113,5 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
 }
