@@ -8,7 +8,7 @@ import retrofit2.http.Header;
 
 public interface Api {
     @GET("User?api_key=keycL5kGwKuZlYMdn")
-    Call <List<User_data>> user();
+    Call <Field> user();
 
     //@GET("Image?maxRecords=3&view=Grid%20view")
     //Call <List<Image>> image();

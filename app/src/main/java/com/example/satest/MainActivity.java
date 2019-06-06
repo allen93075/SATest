@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.example.satest.Fragment.Front;
 import com.example.satest.Retrofit.Api;
+import com.example.satest.Retrofit.Field;
 import com.example.satest.Retrofit.RetrofitManager;
 import com.example.satest.Retrofit.User_data;
 
@@ -67,27 +68,31 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //從server撈資料回來處理
                 Api postApi = RetrofitManager.getClient().create(Api.class);
-                postApi.user().enqueue(new Callback<List<User_data>>() {
+                Call<Field> call = postApi.user();
+                call.enqueue(new Callback<Field>() {
                     @Override
-                    public void onResponse(Call<List<User_data>> call, Response<List<User_data>> response) {
-
-                        List<User_data> list = response.body();
-
-                        for (User_data p : list) {
-                            sb.append(p.getRecords());
-                            sb.append("\n");
-                            sb.append("---------------------\n");
-                        }
-                        tv3.setText(sb);
-
+                    public void onResponse(Call<Field> call, Response<Field> response) {
+                        tv3.setText(response.body().getUser_id(0));
                     }
 
                     @Override
-                    public void onFailure(Call<List<User_data>> call, Throwable t) {
+                    public void onFailure(Call<Field> call, Throwable t) {
                         tv3.setText("錯誤");
-
                     }
                 });
+//                postApi.user().enqueue(new Callback<Field>() {
+//                    @Override
+//                    public void onResponse(Call<Field> call, Response<Field> response) {
+//
+//                        tv3.setText(response.body().getUser_id(0));
+//                    }
+//
+//                    @Override
+//                    public void onFailure(Call<com.example.satest.Retrofit.Field> call, Throwable t) {
+//                        tv3.setText("錯誤");
+//
+//                    }
+//                });
 
                 //tv3.setText(sb.toString()+"到底有沒有呢????");
             }
