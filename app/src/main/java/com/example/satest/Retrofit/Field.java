@@ -19,8 +19,11 @@ public class Field {
 
         return fields;
     }
-    public String getUser_id(int i){
-        return records[i].fields.user_id;
+
+    public String getUser_id(int i) {
+        return records[i].fields.getUser_id();
     }
+
+
 
 }
