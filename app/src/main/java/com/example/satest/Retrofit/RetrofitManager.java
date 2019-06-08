@@ -28,19 +28,14 @@ public class RetrofitManager {
     }
 
 
-    public Api getAPI(){
+    public Api getAPI() {
         return myapi;
     }
 
-    private static class Holder{
+    private static class Holder {
         public static final RetrofitManager getInstance = new RetrofitManager();
 
     }
-
-
-
-
-
 
 
 }

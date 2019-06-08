@@ -53,31 +53,31 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                 Api Api= RetrofitManager.getInstance().getAPI();
+                Api Api = RetrofitManager.getInstance().getAPI();
                 Call<Records> call = Api.user();
+
                 call.enqueue(new Callback<Records>() {
                     @Override
                     public void onResponse(Call<Records> call, Response<Records> response) {
                         for (int i = 0; i < response.body().getRecords().length; i++) {
                             String user = response.body().getFields(i).getUsername();
                             String password = response.body().getFields(i).getPassword();
-                            if(Username_input == null){
+                            if (Username_input == null) {
                                 tv3.setText("Username is null");
                                 break;
                             }
-                            if(Passward_input == null){
+                            if (Passward_input == null) {
 
                                 tv3.setText("please enter password");
                                 break;
                             }
 
-                            if ( user.equals(Username_input.getText().toString()) ) {
+                            if (user.equals(Username_input.getText().toString())) {
                                 if (password.equals(Passward_input.getText().toString())) {
                                     Intent intent = new Intent();
                                     intent.setClass(MainActivity.this, Front.class);
                                     startActivity(intent);
-                                }
-                                else {
+                                } else {
                                     tv3.setText("Password incorrected");
                                     break;
                                 }
@@ -107,13 +107,13 @@ public class MainActivity extends AppCompatActivity {
 //            @Override
 //            public void onClick(View v) {
 //                //從server撈資料回來處理
-//                Api postApi = RetrofitManager.getClient().create(Api.class);
-//                Call<Records> call = postApi.user();
+//                Api Api = RetrofitManager.getInstance().getAPI();
+//                Call<Records> call = Api.user();
 //                call.enqueue(new Callback<Records>() {
 //                    @Override
 //                    public void onResponse(Call<Records> call, Response<Records> response) {
-//                        String a = response.body().getFields(0).getAccount();
-//                        tv3.setText(a);
+//                        response.body().getFields(0).getAccount();
+//                        tv3.setText(response.body().getFields(0).getAccount());
 //                    }
 //
 //                    @Override
