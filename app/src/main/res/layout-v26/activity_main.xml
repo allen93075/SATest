@@ -69,6 +69,14 @@
         </LinearLayout>
 
     </LinearLayout>
+    <TextView
+        android:id="@+id/tv3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text=""
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/Login"
@@ -82,10 +90,6 @@
         android:layout_height="wrap_content"
         android:text="@string/title_activity_sign_up" />
 
-    <TextView
-        android:id="@+id/tv3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/textview1" />
+
 
 </LinearLayout>

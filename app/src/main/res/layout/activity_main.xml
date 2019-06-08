@@ -46,7 +46,7 @@
             android:layout_width="224dp"
             android:layout_height="match_parent"
             android:gravity="center|start"
-            android:orientation="vertical">
+            android:orientation="vertical" >
 
             <EditText
                 android:id="@+id/Username_input"
@@ -65,9 +65,18 @@
                 android:inputType="textPassword" />
 
 
+
         </LinearLayout>
 
     </LinearLayout>
+    <TextView
+        android:id="@+id/tv3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text=""
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/Login"
@@ -81,10 +90,6 @@
         android:layout_height="wrap_content"
         android:text="@string/title_activity_sign_up" />
 
-    <TextView
-        android:id="@+id/tv3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/textview1" />
+
 
 </LinearLayout>
