@@ -34,9 +34,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        Username_input = (EditText) findViewById(R.id.Username_input);
-        Passward_input = (EditText) findViewById(R.id.Password_input);
-        Signup = (Button) findViewById(R.id.Signup);
+        Username_input = findViewById(R.id.Username_input);
+        Passward_input = findViewById(R.id.Password_input);
+        Signup = findViewById(R.id.Signup);
 
 
         Signup.setOnClickListener(new View.OnClickListener() {
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        Login = (Button) findViewById(R.id.Login);
+        Login = findViewById(R.id.Login);
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
