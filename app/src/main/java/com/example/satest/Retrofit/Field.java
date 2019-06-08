@@ -7,7 +7,13 @@ public class Field {
     public User_data fields;
 
     public Field[] getRecords() {
+
         return records;
+    }
+
+    public Field(String id) {
+        this.id = id;
+
     }
 
     public String getId(int i) {
@@ -15,13 +21,9 @@ public class Field {
         return records[i].id;
     }
 
-    public User_data getFields() {
+    public User_data getFields(int i) {
 
-        return fields;
-    }
-
-    public String getUser_id(int i) {
-        return records[i].fields.getUser_id();
+        return records[i].fields;
     }
 
 

@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText Passward_input;
     private Button Signup;
     private Button Login;
+    private TextView tv3;
 
 
     @Override
@@ -37,68 +38,79 @@ public class MainActivity extends AppCompatActivity {
         Username_input = (EditText) findViewById(R.id.Username_input);
         Passward_input = (EditText) findViewById(R.id.Password_input);
         Signup = (Button) findViewById(R.id.Signup);
-
-
-        Signup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(MainActivity.this, SignUp.class);
-                startActivity(intent);
-            }
-        });
-
+        tv3 = (TextView) findViewById(R.id.tv3);
+//        Signup.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                Intent intent = new Intent();
+//                intent.setClass(MainActivity.this, SignUp.class);
+//                startActivity(intent);
+//            }
+//        });
 
         Login = (Button) findViewById(R.id.Login);
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(MainActivity.this, Front.class);
-                startActivity(intent);
+
+                Api Api = RetrofitManager.getClient().create(Api.class);
+                Call<Field> call = Api.user();
+                call.enqueue(new Callback<Field>() {
+                    @Override
+                    public void onResponse(Call<Field> call, Response<Field> response) {
+                        for (int i = 0; i < response.body().getRecords().length; i++) {
+                            String user = response.body().getFields(i).getUsername();
+                            String password = response.body().getFields(i).getPassword();
+                            if (user == Username_input.getText().toString()) {
+                                if (password == Passward_input.getText().toString()) {
+                                    Intent intent = new Intent();
+                                    intent.setClass(MainActivity.this, Front.class);
+                                    startActivity(intent);
+                                } else {
+                                    tv3.setText("Password incorrected");
+                                }
+                            } else {
+                                tv3.setText("Username incorrected");
+                                break;
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<Field> call, Throwable t) {
+
+                    }
+                });
+
+
             }
         });
 
-        //用Sign_UP button 測試
-//        Button info = findViewById(R.id.Signup);
-//        final TextView tv3 = findViewById(R.id.tv3);
-//        final StringBuffer sb = new StringBuffer();
-//        info.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                //從server撈資料回來處理
-//                Api postApi = RetrofitManager.getClient().create(Api.class);
-//                Call<Field> call = postApi.user();
-//                call.enqueue(new Callback<Field>() {
-//                    @Override
-//                    public void onResponse(Call<Field> call, Response<Field> response) {
-//                        String a = response.body().getUser_id(0);
-//                        tv3.setText(a);
-//                    }
-//
-//                    @Override
-//                    public void onFailure(Call<Field> call, Throwable t) {
-//                        tv3.setText("錯誤");
-//                    }
-//                });
-//                postApi.user().enqueue(new Callback<Field>() {
-//                    @Override
-//                    public void onResponse(Call<Field> call, Response<Field> response) {
-//
-//                        tv3.setText(response.body().getUser_id(0));
-//                    }
-//
-//                    @Override
-//                    public void onFailure(Call<com.example.satest.Retrofit.Field> call, Throwable t) {
-//                        tv3.setText("錯誤");
-//
-//                    }
-//                });
+        //Sign_UP button 測試
+        Button info = findViewById(R.id.Signup);
+        final TextView tv3 = findViewById(R.id.tv3);
+        final StringBuffer sb = new StringBuffer();
+        info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //從server撈資料回來處理
+                Api postApi = RetrofitManager.getClient().create(Api.class);
+                Call<Field> call = postApi.user();
+                call.enqueue(new Callback<Field>() {
+                    @Override
+                    public void onResponse(Call<Field> call, Response<Field> response) {
+                        String a = response.body().getFields(0).getAccount();
+                        tv3.setText(a);
+                    }
 
-                //tv3.setText(sb.toString()+"到底有沒有呢????");
-//            }
-//        });
-
-
+                    @Override
+                    public void onFailure(Call<Field> call, Throwable t) {
+                        tv3.setText("錯誤");
+                    }
+                });
+            }
+        })
+        ;
     }
 }
