@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/search1"
+        android:layout_width="409dp"
+        android:layout_height="62dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginBottom="17dp"
+        app:layout_constraintBottom_toTopOf="@+id/user2block"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/last"
+            android:layout_width="76dp"
+            android:layout_height="62dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="Last Page" />
+
+        <TextView
+            android:id="@+id/searchbox"
+            android:layout_width="322dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:text="TextView"
+            tools:text="@tools:sample/full_names" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/user1block"
+        android:layout_width="match_parent"
+        android:layout_height="144dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="169dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user2block">
+
+        <ImageView
+            android:id="@+id/user1image"
+            android:layout_width="109dp"
+            android:layout_height="110dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginRight="12dp"
+            tools:srcCompat="@tools:sample/avatars[0]" />
+
+        <TextView
+            android:id="@+id/user1name"
+            android:layout_width="147dp"
+            android:layout_height="57dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginLeft="12dp"
+            android:text="user1name" />
+
+        <Button
+            android:id="@+id/user1button"
+            android:layout_width="67dp"
+            android:layout_height="54dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:text="more" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/user2block"
+        android:layout_width="match_parent"
+        android:layout_height="144dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="32dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/user1block"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search1">
+
+        <ImageView
+            android:id="@+id/userimage2"
+            android:layout_width="109dp"
+            android:layout_height="110dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginRight="12dp"
+            tools:srcCompat="@tools:sample/avatars[0]" />
+
+        <TextView
+            android:id="@+id/user2name"
+            android:layout_width="147dp"
+            android:layout_height="57dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginLeft="12dp"
+            android:text="user1name" />
+
+        <Button
+            android:id="@+id/user2button"
+            android:layout_width="67dp"
+            android:layout_height="54dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:text="more" />
+
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>

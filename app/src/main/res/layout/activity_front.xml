@@ -300,6 +300,11 @@
         app:menu="@menu/bottom_nav_menu">
 
 
+        <Button
+            android:id="@+id/buttonforsearch"
+            android:layout_width="107dp"
+            android:layout_height="wrap_content"
+            android:text="search" />
     </android.support.design.widget.BottomNavigationView>
 
 </android.support.constraint.ConstraintLayout>
