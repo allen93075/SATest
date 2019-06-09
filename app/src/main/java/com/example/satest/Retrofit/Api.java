@@ -27,6 +27,6 @@ public interface Api {
     Call <Records> signup();
 
     @POST("User?api_key=keycL5kGwKuZlYMdn")
-    Call<Records> updateUser(@Field("Username") EditText name, @Field("Email") EditText mail, @Field("Password") EditText password);
+    Call<Records> Post(@Field("Username") EditText name, @Field("Email") EditText mail, @Field("Password") EditText password);
 
 }

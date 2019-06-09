@@ -44,7 +44,8 @@ public class SignUp extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Api Api = RetrofitManager.getInstance().getAPI();
-                Call<Records> call = Api.updateUser(Username_input, Email_input, Passward_input);
+                Call<Records> call = Api.Post(Username_input, Email_input, Passward_input);
+                createPost();
                 call.enqueue(new Callback<Records>() {
                     @Override
                     public void onResponse(Call<Records> call, Response<Records> response) {
@@ -62,5 +63,8 @@ public class SignUp extends AppCompatActivity {
 
 
         });
+    }
+    private void createPost(){
+        //Post post = new Post(Username_input, Email_input, Passward_input);
     }
 }
