@@ -25,7 +25,8 @@ public class MainActivity extends AppCompatActivity {
     private Button Signup;
     private Button Login;
     private TextView tv3;
-
+    private Boolean a = false;
+    private Boolean b;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,16 +85,30 @@ public class MainActivity extends AppCompatActivity {
                             }
 
                             if (user != null && user.equals(Username_input.getText().toString())) {
+
+                                a = true;
+
                                 if (password != null && password.equals(Passward_input.getText().toString())) {
                                     Intent intent = new Intent();
                                     intent.setClass(MainActivity.this, Front.class);
                                     startActivity(intent);
+                                    break;
                                 } else {
-                                    tv3.setText("Password incorrected");
+                                    b = false;
                                 }
                             } else {
-                                tv3.setText("Username incorrected");
                             }
+
+                            if(a ==true && b == false){
+                                tv3.setText("Password incorrected");
+                            }
+
+                            if(a == false){
+
+                                tv3.setText("Username incorrected");
+
+                            }
+
 
                         }
                     }

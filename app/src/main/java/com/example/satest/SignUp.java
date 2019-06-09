@@ -27,11 +27,16 @@ public class SignUp extends AppCompatActivity {
     private EditText Email_input;
     private EditText ConfirmPassword;
     private Button register;
+    private String a;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sign_up);
+        a = "john";
+
 
         Username_input = (EditText) findViewById(R.id.Username_input);
         Passward_input = (EditText) findViewById(R.id.Password_input);
@@ -44,11 +49,13 @@ public class SignUp extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Api Api = RetrofitManager.getInstance().getAPI();
-                Call<Records> call = Api.Post(Username_input, Email_input, Passward_input);
-                createPost();
+                Call<Records> call = Api.Post(a, a, a);
+//                createPost();
                 call.enqueue(new Callback<Records>() {
                     @Override
                     public void onResponse(Call<Records> call, Response<Records> response) {
+
+
                     }
                     @Override
                     public void onFailure(Call<Records> call, Throwable t) {
