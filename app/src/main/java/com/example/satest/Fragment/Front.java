@@ -20,10 +20,16 @@ public class Front extends AppCompatActivity {
     private Button comment;
     private Button massage;
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_front);
+        BottomNavigationView navView = findViewById(R.id.nav_view);
+        //mTextMessage = findViewById(R.id.message);
+        navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-
-
-
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new front_fragment()).commit();
+    }
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener

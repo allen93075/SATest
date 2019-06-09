@@ -90,11 +90,9 @@ public class MainActivity extends AppCompatActivity {
                                     startActivity(intent);
                                 } else {
                                     tv3.setText("Password incorrected");
-                                    break;
                                 }
                             } else {
                                 tv3.setText("Username incorrected");
-                                break;
                             }
 
                         }
