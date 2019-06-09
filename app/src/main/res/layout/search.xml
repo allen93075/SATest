@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="top" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="0dp" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="409dp"
+        android:layout_height="95dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginBottom="508dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/lastbotton"
+            android:layout_width="76dp"
+            android:layout_height="match_parent"
+            android:text="Last Page" />
+
+        <EditText
+            android:id="@+id/searchbox2"
+            android:layout_width="256dp"
+            android:layout_height="match_parent"
+            android:text="TextView" />
+
+        <Button
+            android:id="@+id/search"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:text="Search" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/work"
+        android:layout_width="355dp"
+        android:layout_height="213dp"
+        android:layout_marginStart="71dp"
+        android:layout_marginLeft="71dp"
+        android:layout_marginTop="164dp"
+        android:layout_marginEnd="72dp"
+        android:layout_marginRight="72dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_report_image"
+        tools:srcCompat="@tools:sample/backgrounds/scenic[7]" />
+
+    <TextView
+        android:id="@+id/describ"
+        android:layout_width="357dp"
+        android:layout_height="151dp"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="452dp"
+        tools:text="@tools:sample/lorem/random" />
+
+    <android.support.constraint.Barrier
+        android:id="@+id/barrier2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="top" />
+
+    <LinearLayout
+        android:id="@+id/label"
+        android:layout_width="355dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="393dp">
+
+        <TextView
+            android:id="@+id/label1"
+            android:layout_width="87dp"
+            android:layout_height="35dp"
+            android:text="#1233" />
+
+        <TextView
+            android:id="@+id/label2"
+            android:layout_width="87dp"
+            android:layout_height="35dp"
+            android:text="#snow" />
+
+        <TextView
+            android:id="@+id/label3"
+            android:layout_width="91dp"
+            android:layout_height="37dp"
+            android:text="#sunset" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/datebox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="14dp"
+        android:ems="10"
+        android:inputType="date"
+        app:layout_constraintBottom_toTopOf="@+id/work"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+        tools:layout_editor_absoluteX="28dp"
+        tools:text="@tools:sample/date/ddmmyy" />
+
+</android.support.constraint.ConstraintLayout>

@@ -71,19 +71,28 @@ public class MainActivity extends AppCompatActivity {
                                 tv3.setText("please enter password");
                                 break;
                             }
+                            if(user == null){
 
-                            if (user.equals(Username_input.getText().toString())) {
-                                if (password.equals(Passward_input.getText().toString())) {
+                                tv3.setText("沒有USER資料");
+                                break;
+                            }
+
+                            if(password == null){
+
+                                tv3.append("+沒有password資料");
+                                break;
+                            }
+
+                            if (user != null && user.equals(Username_input.getText().toString())) {
+                                if (password != null && password.equals(Passward_input.getText().toString())) {
                                     Intent intent = new Intent();
                                     intent.setClass(MainActivity.this, Front.class);
                                     startActivity(intent);
                                 } else {
                                     tv3.setText("Password incorrected");
-                                    break;
                                 }
                             } else {
                                 tv3.setText("Username incorrected");
-                                break;
                             }
 
                         }

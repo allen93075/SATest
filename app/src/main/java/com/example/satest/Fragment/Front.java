@@ -41,6 +41,9 @@ public class Front extends AppCompatActivity {
                 case R.id.navigation_Upload:
                     selectedFragment = new upload_fragment();
                     break;
+                case R.id.navigation_Search:
+                    selectedFragment = new search_fragment();
+                    break;
             }
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
             return true;
