@@ -25,4 +25,5 @@
     <string name="choose_p">選擇圖片</string>
     <string name="open">公開</string>
     <string name="textview1">TextView</string>
+    <string name="search">search</string>
 </resources>

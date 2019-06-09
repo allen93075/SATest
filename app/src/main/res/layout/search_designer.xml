@@ -6,50 +6,44 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:id="@+id/search1"
         android:layout_width="409dp"
-        android:layout_height="62dp"
+        android:layout_height="95dp"
         android:layout_marginEnd="2dp"
         android:layout_marginRight="2dp"
-        android:layout_marginBottom="17dp"
-        app:layout_constraintBottom_toTopOf="@+id/user2block"
+        android:layout_marginBottom="508dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
-            android:id="@+id/last"
+            android:id="@+id/lastbotton"
             android:layout_width="76dp"
-            android:layout_height="62dp"
-            android:layout_marginStart="2dp"
-            android:layout_marginLeft="2dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_height="match_parent"
             android:text="Last Page" />
 
-        <TextView
-            android:id="@+id/searchbox"
-            android:layout_width="322dp"
-            android:layout_height="56dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:text="TextView"
-            tools:text="@tools:sample/full_names" />
+        <EditText
+            android:id="@+id/searchbox2"
+            android:layout_width="256dp"
+            android:layout_height="match_parent"
+            android:text="TextView" />
 
+        <Button
+            android:id="@+id/search"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:text="Search" />
     </LinearLayout>
-
     <LinearLayout
         android:id="@+id/user1block"
         android:layout_width="match_parent"
         android:layout_height="144dp"
-        android:layout_marginTop="32dp"
         android:layout_marginBottom="169dp"
         android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user2block">
+        app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
             android:id="@+id/user1image"
@@ -83,13 +77,11 @@
         android:id="@+id/user2block"
         android:layout_width="match_parent"
         android:layout_height="144dp"
-        android:layout_marginTop="16dp"
         android:layout_marginBottom="32dp"
         android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/user1block"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search1">
+        app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
             android:id="@+id/userimage2"
