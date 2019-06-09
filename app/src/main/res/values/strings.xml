@@ -27,6 +27,7 @@
     <string name="textview1">TextView</string>
     <string name="search">search</string>
     <string name="spinner">SpinnerDemo</string>
+    <string name="search_spinner">123</string>
     <string-array name="searching_spinner">
         <item>Designer</item>
         <item>Tags</item>

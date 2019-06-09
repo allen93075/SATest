@@ -37,12 +37,12 @@ public class search_fragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.begin_search, container,false);
 
-//        Spinner spinner = (Spinner)findViewById(R.id.spinner);
-//        String[] search_spinner = {"Designer", "Tags"};
-//        ArrayAdapter<String> SearchList = new ArrayAdapter<>(begin_class.this,
-//                android.R.layout.simple_spinner_dropdown_item,search_spinner
-//        );
-//        spinner.setAdapter(SearchList);
+        //Spinner spinner = (Spinner)findViewById(R.id.spinner);
+        //String[] search_spinner = {"Designer", "Tags"};
+        //ArrayAdapter<String> SearchList = new ArrayAdapter<>(begin_class.this,
+                //android.R.layout.simple_spinner_dropdown_item,search_spinner
+        //);
+        //spinner.setAdapter(SearchList);
 //        if(search_spinner.equals("Designer")){
 //            Search.setOnClickListener(new View.OnClickListener() {
 //                @Override
@@ -116,9 +116,9 @@ public class search_fragment extends Fragment {
 //                }
 //            });
 //        }
-        //Tags_input= (EditText) findViewById(R.id.searchbox2);
-        //Username_input = (EditText) findViewById(R.id.searchbox2);
-        //LastPage = (Button) findViewById(R.id.lastbotton);
+//        //Tags_input= (EditText) findViewById(R.id.searchbox2);
+//        //Username_input = (EditText) findViewById(R.id.searchbox2);
+//        //LastPage = (Button) findViewById(R.id.lastbotton);
 //        LastPage.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -128,7 +128,7 @@ public class search_fragment extends Fragment {
 //                startActivity(intent);
 //            }
 //        });
-        //tv2 = (TextView) findViewById(R.id.tv2);
-        //Search = (Button) findViewById(R.id.search);
+//        //tv2 = (TextView) findViewById(R.id.tv2);
+//        //Search = (Button) findViewById(R.id.search);
     }
 }
