@@ -26,4 +26,9 @@
     <string name="open">公開</string>
     <string name="textview1">TextView</string>
     <string name="search">search</string>
+    <string name="spinner">SpinnerDemo</string>
+    <string-array name="searching_spinner">
+        <item>Designer</item>
+        <item>Tags</item>
+    </string-array>
 </resources>

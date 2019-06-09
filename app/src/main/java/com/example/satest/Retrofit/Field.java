@@ -5,6 +5,7 @@ public class Field {
     public Field[] records;
     public String id;
     public User_data fields;
+    public tags tagsfields;
 
     public Field[] getRecords() {
 
@@ -26,6 +27,11 @@ public class Field {
         return records[i].fields;
     }
 
+    public tags getTagsFields(int i) {
+        return records[i].tagsfields;
+
+
+    }
 
 
 }

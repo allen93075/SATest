@@ -13,8 +13,11 @@ public interface Api {
     @GET("User?api_key=keycL5kGwKuZlYMdn")
     Call <Field> user();
 
-    @GET("Image?maxRecords=3&view=Grid%20view")
-    Call <Image> image();
+    @GET("Image?api_key=keycL5kGwKuZlYMdn")
+    Call <Field> image();
+
+    @GET("Tags?api_key=keycL5kGwKuZlYMdn")
+    Call <Field> tags();
 
     @FormUrlEncoded
     @POST("User")

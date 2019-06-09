@@ -63,11 +63,11 @@ public class MainActivity extends AppCompatActivity {
                         for (int i = 0; i < response.body().getRecords().length; i++) {
                             String user = response.body().getFields(i).getUsername();
                             String password = response.body().getFields(i).getPassword();
-                            if(Username_input.equals(null)){
+                            if(Username_input==null){
                                 tv3.setText("Username is null");
                                 break;
                             }
-                            if(Passward_input.equals(null)){
+                            if(Passward_input==null){
 
                                 tv3.setText("please enter password");
                                 break;
