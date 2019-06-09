@@ -5,23 +5,20 @@ import java.util.List;
 public class User_data {
 
 
-    public String user_id;
+
     public String email;
-    public String password;
+    public String Password;
     public String image;
     public String account;
-    public String username;
+    public String User_name;
 
-    public String getUser_id() {
-        return user_id;
-    }
 
     public String getEmail() {
         return email;
     }
 
     public String getPassword() {
-        return password;
+        return Password;
     }
 
     public String getImage() {
@@ -33,7 +30,7 @@ public class User_data {
     }
 
     public String getUsername() {
-        return username;
+        return User_name;
     }
 
 

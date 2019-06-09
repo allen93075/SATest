@@ -30,8 +30,8 @@ public class Records {
         return records[i].fields;
     }
 
-    public String getUser_id(int i) {
-        return records[i].fields.getUser_id();
+    public String getUsername(int i) {
+        return records[i].fields.getUsername();
     }
 
 
