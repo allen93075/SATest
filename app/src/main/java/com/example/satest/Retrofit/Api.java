@@ -11,16 +11,16 @@ import retrofit2.http.POST;
 
 public interface Api {
     @GET("User?api_key=keycL5kGwKuZlYMdn")
-    Call <Field> user();
+    Call <Records> user();
 
     @GET("Image?api_key=keycL5kGwKuZlYMdn")
-    Call <Field> image();
+    Call <Records> image();
 
     @GET("Tags?api_key=keycL5kGwKuZlYMdn")
-    Call <Field> tags();
+    Call <Records> tags();
 
     @FormUrlEncoded
     @POST("User")
-    Call <Field> signup();
+    Call <Records> signup();
 
 }

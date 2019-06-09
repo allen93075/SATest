@@ -44,13 +44,13 @@ public class begin_class extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
 
-                    Api Api = RetrofitManager.getClient().create(Api.class);
-                    Call<Field> call = Api.user();
-                    call.enqueue(new Callback<Field>() {
+                    Api Api = RetrofitManager.getInstance().getAPI();
+                    Call<Records> call = Api.user();
+                    call.enqueue(new Callback<Records>() {
                         @Override
-                        public void onResponse(Call<Field> call, Response<Field> response) {
+                        public void onResponse(Call<Records> call, Response<Records> response) {
                             for (int i = 0; i < response.body().getRecords().length; i++) {
-                                String user = response.body().getFields(i).username;
+                                String user = response.body().getFields(i).getUsername();
                                 if (Username_input==null) {
                                     tv2.setText("Please type a name.");
                                     break;
@@ -68,7 +68,7 @@ public class begin_class extends AppCompatActivity {
                         }
 
                         @Override
-                        public void onFailure(Call<Field> call, Throwable t) {
+                        public void onFailure(Call<Records> call, Throwable t) {
 
                         }
                     });
@@ -81,13 +81,13 @@ public class begin_class extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
 
-                    Api Api = RetrofitManager.getClient().create(Api.class);
-                    Call<Field> call = Api.tags();
-                    call.enqueue(new Callback<Field>() {
+                    Api Api = RetrofitManager.getInstance().getAPI();
+                    Call<Records> call = Api.tags();
+                    call.enqueue(new Callback<Records>() {
                         @Override
-                        public void onResponse(Call<Field> call, Response<Field> response) {
+                        public void onResponse(Call<Records> call, Response<Records> response) {
                             for (int i = 0; i < response.body().getRecords().length; i++) {
-                                String tag = response.body().getTagsFields(i).getTags();
+                                String tag = response.body().getTagsfields(i).getTags();
                                 if (Tags_input==null) {
                                     tv2.setText("Please type a tag. ");
                                     break;
@@ -105,7 +105,7 @@ public class begin_class extends AppCompatActivity {
                         }
 
                         @Override
-                        public void onFailure(Call<Field> call, Throwable t) {
+                        public void onFailure(Call<Records> call, Throwable t) {
 
                         }
                     });
