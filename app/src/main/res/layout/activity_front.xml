@@ -33,14 +33,6 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fragment_container"
-        app:menu="@menu/bottom_nav_menu">
-
-
-        <Button
-            android:id="@+id/buttonforsearch"
-            android:layout_width="107dp"
-            android:layout_height="wrap_content"
-            android:text="search" />
-    </android.support.design.widget.BottomNavigationView>
+        app:menu="@menu/bottom_nav_menu"/>
 
 </android.support.constraint.ConstraintLayout>
