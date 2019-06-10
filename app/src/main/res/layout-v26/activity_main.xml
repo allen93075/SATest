@@ -49,7 +49,7 @@
             android:orientation="vertical" >
 
             <EditText
-                android:id="@+id/Username_input"
+                android:id="@+id/Username_signup"
                 android:layout_width="200sp"
                 android:layout_height="wrap_content"
                 android:autofillHints="@string/username"
@@ -57,7 +57,7 @@
                 android:inputType="" />
 
             <EditText
-                android:id="@+id/Password_input"
+                android:id="@+id/Password_signup"
                 android:layout_width="200sp"
                 android:layout_height="wrap_content"
                 android:autofillHints="@string/password"

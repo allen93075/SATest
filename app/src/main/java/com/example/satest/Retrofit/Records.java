@@ -8,7 +8,6 @@ public class Records {
     public tags tagsfields;
 
     public Records(String id, User_data fields, String createtime) {
-
         this.id = id;
         this.fields = fields;
         this.createtime = createtime;

@@ -34,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        Username_input = (EditText) findViewById(R.id.Username_input);
-        Passward_input = (EditText) findViewById(R.id.Password_input);
+        Username_input = (EditText) findViewById(R.id.Username_signup);
+        Passward_input = (EditText) findViewById(R.id.Password_signup);
         Signup = (Button) findViewById(R.id.Signup);
         tv3 = (TextView) findViewById(R.id.tv3);
 

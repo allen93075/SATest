@@ -5,16 +5,24 @@ import java.util.List;
 public class User_data {
 
 
+    public String User_name;
 
-    public String email;
+    public User_data(String User_name, String Email, String Password) {
+       this.User_name = User_name;
+        this.Email = Email;
+        this.Password = Password;
+    }
+
+    public String Email;
     public String Password;
     public String image;
     public String account;
-    public String User_name;
+
+
 
 
     public String getEmail() {
-        return email;
+        return Email;
     }
 
     public String getPassword() {
@@ -32,14 +40,6 @@ public class User_data {
     public String getUsername() {
         return User_name;
     }
-
-
-
-
-
-
-
-
 
 
 }

@@ -1,6 +1,8 @@
 package com.example.satest.Retrofit;
 
 public class Req {
+    private User_data fields;
+
     public Req(User_data fields) {
         this.fields = fields;
     }
@@ -13,6 +15,6 @@ public class Req {
         this.fields = fields;
     }
 
-    private User_data fields;
+
 
 }
