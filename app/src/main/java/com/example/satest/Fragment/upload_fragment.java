@@ -36,7 +36,7 @@ public class upload_fragment extends Fragment{
                 Intent intent = new Intent();
                 //開啟Pictures畫面Type設定為image
                 intent.setType("image/*");
-                //使用Intent.ACTION_GET_CONTENT這個Action                                            //會開啟選取圖檔視窗讓您選取手機內圖檔
+                //使用Intent.ACTION_GET_CONTENT這個Action                                            //開啟選取圖檔視窗讓您選取手機內圖檔
                 intent.setAction(Intent.ACTION_GET_CONTENT);
                 //取得相片後返回本畫面
                 startActivityForResult(intent, 1);
