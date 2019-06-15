@@ -5,27 +5,28 @@ import java.util.List;
 public class User_data {
 
 
-    public String user_id;
-    public String email;
-    public String password;
-    public String image;
-    public String account;
-    public String username;
-    public String phone;
-    public String following;
+    public String User_name;
 
-
-
-    public String getUser_id() {
-        return user_id;
+    public User_data(String User_name, String Email, String Password) {
+       this.User_name = User_name;
+        this.Email = Email;
+        this.Password = Password;
     }
 
+    public String Email;
+    public String Password;
+    public String image;
+    public String account;
+
+
+
+
     public String getEmail() {
-        return email;
+        return Email;
     }
 
     public String getPassword() {
-        return password;
+        return Password;
     }
 
     public String getImage() {
@@ -37,22 +38,8 @@ public class User_data {
     }
 
     public String getUsername() {
-        return username;
+        return User_name;
     }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public String getFollowing() {
-        return following;
-    }
-
-
-
-
-
-
 
 
 }

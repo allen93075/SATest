@@ -10,7 +10,6 @@ public class search_designer extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.search_designer);
 
+
     }
-
-
 }

@@ -1,5 +1,6 @@
 package com.example.satest;
 
+
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,11 +11,8 @@ import android.widget.TextView;
 
 import com.example.satest.Fragment.Front;
 import com.example.satest.Retrofit.Api;
-import com.example.satest.Retrofit.Field;
+import com.example.satest.Retrofit.Records;
 import com.example.satest.Retrofit.RetrofitManager;
-import com.example.satest.Retrofit.User_data;
-
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -27,7 +25,8 @@ public class MainActivity extends AppCompatActivity {
     private Button Signup;
     private Button Login;
     private TextView tv3;
-
+    private Boolean a = false;
+    private Boolean b;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        Username_input = (EditText) findViewById(R.id.Username_input);
-        Passward_input = (EditText) findViewById(R.id.Password_input);
+        Username_input = (EditText) findViewById(R.id.Username_signup);
+        Passward_input = (EditText) findViewById(R.id.Password_signup);
         Signup = (Button) findViewById(R.id.Signup);
         tv3 = (TextView) findViewById(R.id.tv3);
 
@@ -55,44 +54,67 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Api Api = RetrofitManager.getClient().create(Api.class);
-                Call<Field> call = Api.user();
-                call.enqueue(new Callback<Field>() {
+                Api Api = RetrofitManager.getInstance().getAPI();
+                Call<Records> call = Api.user();
+
+                call.enqueue(new Callback<Records>() {
                     @Override
-                    public void onResponse(Call<Field> call, Response<Field> response) {
+                    public void onResponse(Call<Records> call, Response<Records> response) {
                         for (int i = 0; i < response.body().getRecords().length; i++) {
                             String user = response.body().getFields(i).getUsername();
                             String password = response.body().getFields(i).getPassword();
-                            if(Username_input.equals(null)){
+                            if (Username_input == null) {
                                 tv3.setText("Username is null");
                                 break;
                             }
-                            if(Passward_input.equals(null)){
+                            if (Passward_input == null) {
 
                                 tv3.setText("please enter password");
                                 break;
                             }
+                            if(user == null){
 
-                            if ( user.equals(Username_input.getText().toString()) ) {
-                                if (password.equals(Passward_input.getText().toString())) {
+                                tv3.setText("沒有USER資料");
+                                break;
+                            }
+
+                            if(password == null){
+
+                                tv3.append("+沒有password資料");
+                                break;
+                            }
+
+                            if (user != null && user.equals(Username_input.getText().toString())) {
+
+                                a = true;
+
+                                if (password != null && password.equals(Passward_input.getText().toString())) {
                                     Intent intent = new Intent();
                                     intent.setClass(MainActivity.this, Front.class);
                                     startActivity(intent);
-                                }
-                                else {
-                                    tv3.setText("Password incorrected");
                                     break;
+                                } else {
+                                    b = false;
                                 }
                             } else {
-                                tv3.setText("Username incorrected");
-                                break;
                             }
+
+                            if(a ==true && b == false){
+                                tv3.setText("Password incorrected");
+                            }
+
+                            if(a == false){
+
+                                tv3.setText("Username incorrected");
+
+                            }
+
 
                         }
                     }
 
                     @Override
-                    public void onFailure(Call<Field> call, Throwable t) {
+                    public void onFailure(Call<Records> call, Throwable t) {
 
                     }
                 });
@@ -109,22 +131,24 @@ public class MainActivity extends AppCompatActivity {
 //            @Override
 //            public void onClick(View v) {
 //                //從server撈資料回來處理
-//                Api postApi = RetrofitManager.getClient().create(Api.class);
-//                Call<Field> call = postApi.user();
-//                call.enqueue(new Callback<Field>() {
+//                Api Api = RetrofitManager.getInstance().getAPI();
+//                Call<Records> call = Api.user();
+//                call.enqueue(new Callback<Records>() {
 //                    @Override
-//                    public void onResponse(Call<Field> call, Response<Field> response) {
-//                        String a = response.body().getFields(0).getAccount();
-//                        tv3.setText(a);
+//                    public void onResponse(Call<Records> call, Response<Records> response) {
+//                        response.body().getFields(0).getAccount();
+//                        tv3.setText(response.body().getFields(0).getAccount());
 //                    }
 //
 //                    @Override
-//                    public void onFailure(Call<Field> call, Throwable t) {
+//                    public void onFailure(Call<Records> call, Throwable t) {
 //                        tv3.setText("錯誤");
 //                    }
 //                });
 //            }
 //        })
 //        ;
+
+
     }
 }
