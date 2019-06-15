@@ -18,12 +18,6 @@
             android:layout_height="wrap_content"
             android:text="Edit" />
 
-        <Button
-            android:id="@+id/searbutton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="search" />
-
         <ImageView
             android:id="@+id/imageView4"
 
@@ -36,14 +30,14 @@
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/username_own_account"
             android:layout_width="141dp"
-            android:layout_height="24dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="144dp"
             android:layout_marginLeft="144dp"
             android:layout_marginTop="9dp"
             android:gravity="center"
-            android:text="Abraham0301"
+            android:text=" "
 
             />
 
@@ -60,14 +54,14 @@
             />
 
         <TextView
-            android:id="@+id/textView9"
+            android:id="@+id/intro"
             android:layout_width="334dp"
             android:layout_height="97dp"
             android:layout_marginStart="36dp"
             android:layout_marginLeft="36dp"
             android:layout_marginTop="4dp"
             android:gravity="center"
-            android:text="Abraham0301"
+            android:text=" "
 
             />
 

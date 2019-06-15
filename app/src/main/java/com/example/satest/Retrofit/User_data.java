@@ -18,6 +18,12 @@ public class User_data {
     public String image;
     public String account;
 
+    public String getAboutme() {
+        return Aboutme;
+    }
+
+    public String Aboutme;
+
 
 
 
@@ -40,6 +46,7 @@ public class User_data {
     public String getUsername() {
         return User_name;
     }
+
 
 
 }

@@ -10,7 +10,7 @@ import android.view.MenuItem;
 
 import com.example.satest.R;
 
-public class Front extends AppCompatActivity {
+public class  Front extends AppCompatActivity {
     //private TextView mTextMessage;
 
     @Override
