@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,10 +24,15 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
+
+import com.example.satest.MainActivity;
 import com.example.satest.R;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageMetadata;
 import com.google.firebase.storage.StorageReference;
@@ -39,15 +45,18 @@ public class upload_fragment extends Fragment{
     public FirebaseStorage storage = FirebaseStorage.getInstance();
     public ImageView imageView;
     public Bitmap bitmap;
+    public ProgressBar progressBar;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.upload_fragment, container, false);
+        final View view = inflater.inflate(R.layout.upload_fragment, container, false);
 
         Button selectButton = (Button) view.findViewById(R.id.select_image);
-        Button uploadButton = (Button) view.findViewById(R.id.upload_ready);
+        final Button uploadButton = (Button) view.findViewById(R.id.upload_ready);
         final EditText textInput = (EditText) view.findViewById(R.id.description);
+        progressBar = (ProgressBar) view.findViewById(R.id.progressBar);
+        progressBar.setVisibility(View.GONE);
 
         uploadButton.setOnClickListener(new Button.OnClickListener() {
             @Override
@@ -65,7 +74,19 @@ public class upload_fragment extends Fragment{
                 StorageMetadata metadata = new StorageMetadata.Builder()
                         .setCustomMetadata("description", textInput.getText().toString()).build();
 
+                progressBar.setVisibility(View.VISIBLE);
+                uploadButton.setEnabled(false);
                 UploadTask uploadTask = firebaseRdf.putBytes(data, metadata);
+                uploadTask.addOnSuccessListener(getActivity(), new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                    @Override
+                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                        progressBar.setVisibility(View.GONE);
+                        Toast toast = Toast.makeText(getActivity(),"Success!", Toast.LENGTH_LONG);
+                        toast.setGravity(Gravity.CENTER, 0, 0);
+                        toast.show();
+                        uploadButton.setEnabled(true);
+                    }
+                });
             }
         });
 
