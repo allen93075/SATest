@@ -1,39 +1,27 @@
 package com.example.satest.Fragment;
 
-import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.EventLogTags;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.SearchView;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.satest.R;
 import com.example.satest.Retrofit.Api;
-import com.example.satest.Retrofit.Records;
 import com.example.satest.Retrofit.Records_image;
 import com.example.satest.Retrofit.RetrofitManager;
-import com.example.satest.Retrofit.begin_class;
 import com.example.satest.Retrofit.picture_data;
-import com.example.satest.search_designer;
-import com.example.satest.search_tags;
-import com.squareup.picasso.Picasso;
 
 import java.io.InputStream;
 import java.net.URL;

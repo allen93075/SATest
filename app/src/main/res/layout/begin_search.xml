@@ -18,18 +18,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <Button
-            android:id="@+id/searchfordesigner"
-            android:layout_width="76dp"
-            android:layout_height="wrap_content"
-            android:text="Designer" />
-
         <EditText
             android:id="@+id/searchbox2"
             android:layout_width="256dp"
             android:layout_height="match_parent"
             android:hint="Enter here"/>
 
+
+        <Button
+            android:id="@+id/searchfordesigner"
+            android:layout_width="76dp"
+            android:layout_height="wrap_content"
+            android:text="D_Search" />
 
         <Button
             android:id="@+id/search"
@@ -40,8 +40,8 @@
 
     <TextView
         android:id="@+id/tv2"
-        android:layout_width="328dp"
-        android:layout_height="125dp"
+        android:layout_width="321dp"
+        android:layout_height="64dp"
         android:layout_marginStart="92dp"
         android:layout_marginLeft="92dp"
         android:layout_marginTop="11dp"
@@ -50,7 +50,7 @@
         android:layout_marginBottom="33dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.523"
+        app:layout_constraintHorizontal_bias="0.531"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/username1" />
 
@@ -58,22 +58,22 @@
         android:id="@+id/username1"
         android:layout_width="175dp"
         android:layout_height="56dp"
-        android:layout_marginStart="47dp"
-        android:layout_marginLeft="47dp"
-        android:layout_marginTop="9dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="189dp"
         android:layout_marginRight="189dp"
         android:layout_marginBottom="9dp"
         app:layout_constraintBottom_toTopOf="@+id/tv2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.043"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="335dp"
-        android:layout_height="273dp"
+        android:layout_width="346dp"
+        android:layout_height="354dp"
         android:layout_alignParentLeft="true"
         android:layout_marginStart="40dp"
         android:layout_marginLeft="40dp"
