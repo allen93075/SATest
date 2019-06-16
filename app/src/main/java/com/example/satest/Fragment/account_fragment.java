@@ -27,49 +27,49 @@ public class account_fragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        Api Api = RetrofitManager.getInstance().getAPI();
-        Call<Records> call = Api.user();
-        call.enqueue(new Callback<Records>() {
-            @Override
-            public void onResponse(Call<Records> call, Response<Records> response) {
-                String a = response.body().getFields(1).getUsername();
-                user_Name = getView().findViewById(R.id.username_own_account);
-                user_Name.setText(a);
-                String b = response.body().getFields(1).getAboutme();
-               intro= getView().findViewById(R.id.intro);
-                intro.setText(b);
-            }
-
-            @Override
-            public void onFailure(Call<Records> call, Throwable t) {
-
-            }
-        });
+//        Api Api = RetrofitManager.getInstance().getAPI();
+//        Call<Records> call = Api.user();
+//        call.enqueue(new Callback<Records>() {
+//            @Override
+//            public void onResponse(Call<Records> call, Response<Records> response) {
+//                String a = response.body().getFields(1).getUsername();
+//                user_Name = getView().findViewById(R.id.username_own_account);
+//                user_Name.setText(a);
+//                String b = response.body().getFields(1).getAboutme();
+//               intro= getView().findViewById(R.id.intro);
+//                intro.setText(b);
+//            }
+//
+//            @Override
+//            public void onFailure(Call<Records> call, Throwable t) {
+//
+//            }
+//        });
 
 
         return inflater.inflate(R.layout.account_fragment, container, false);
 
     }
 
-    public void get() {
-        Api Api = RetrofitManager.getInstance().getAPI();
-        Call<Records> call = Api.user();
-        call.enqueue(new Callback<Records>() {
-            @Override
-            public void onResponse(Call<Records> call, Response<Records> response) {
-                String a = response.body().getFields(1).getUsername();
-                user_Name = getView().findViewById(R.id.username_own_account);
-                user_Name.setText(a);
-
-
-            }
-
-            @Override
-            public void onFailure(Call<Records> call, Throwable t) {
-
-            }
-        });
-
-
-    }
+//    public void get() {
+//        Api Api = RetrofitManager.getInstance().getAPI();
+//        Call<Records> call = Api.user();
+//        call.enqueue(new Callback<Records>() {
+//            @Override
+//            public void onResponse(Call<Records> call, Response<Records> response) {
+//                String a = response.body().getFields(1).getUsername();
+//                user_Name = getView().findViewById(R.id.username_own_account);
+//                user_Name.setText(a);
+//
+//
+//            }
+//
+//            @Override
+//            public void onFailure(Call<Records> call, Throwable t) {
+//
+//            }
+//        });
+//
+//
+//    }
 }
