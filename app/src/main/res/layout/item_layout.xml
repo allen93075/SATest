@@ -7,8 +7,19 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_width="263dp"
+        android:layout_height="347dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:id="@+id/DescriptionView"
+        android:layout_width="371dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="380dp" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"
