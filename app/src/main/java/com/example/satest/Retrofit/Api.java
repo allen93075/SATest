@@ -18,7 +18,7 @@ public interface Api {
     Call <Records> user();
 
     @GET("Image?api_key=keycL5kGwKuZlYMdn")
-    Call <Records> image();
+    Call <Records_image> image();
 
     @GET("Tags?api_key=keycL5kGwKuZlYMdn")
     Call <Records> tags();
