@@ -21,7 +21,7 @@
         <Button
             android:id="@+id/lastbotton"
             android:layout_width="76dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:text="Last Page" />
 
         <EditText
@@ -32,23 +32,24 @@
 
         <Button
             android:id="@+id/search"
-            android:layout_width="70dp"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="Search" />
     </LinearLayout>
 
     <TextView
         android:id="@+id/tv2"
-        android:layout_width="301dp"
-        android:layout_height="70dp"
+        android:layout_width="228dp"
+        android:layout_height="42dp"
         android:layout_marginStart="22dp"
         android:layout_marginLeft="22dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="34dp"
         android:layout_marginRight="34dp"
         android:text="TextView"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.611"
+        app:layout_constraintHorizontal_bias="0.267"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
@@ -57,9 +58,41 @@
         android:layout_width="98dp"
         android:layout_height="39dp"
         android:layout_marginTop="12dp"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
 
-        />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="390dp"
+        android:layout_height="412dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="387dp"
+        android:layout_marginRight="387dp"
+        android:maxWidth="100dp"
+        android:maxHeight="100dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.066"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="406dp"
+        android:layout_height="443dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

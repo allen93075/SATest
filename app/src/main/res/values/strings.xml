@@ -25,7 +25,6 @@
     <string name="choose_p">選擇圖片</string>
     <string name="open">公開</string>
     <string name="textview1">TextView</string>
-    <string name="search">search</string>
     <string name="spinner">SpinnerDemo</string>
     <string name="search_spinner">123</string>
     <string-array name="searching_spinner">
