@@ -94,11 +94,14 @@ public class search_fragment extends Fragment implements View.OnClickListener {
                 int m = 0; //紀錄要傳給MyAdapter的Array大小
                 for (int i = 0; i < response.body().getRecords().length; i++) {
                   String image_id_result = response.body().getFields(i).getImage_id();
-                  if (image_id_result != null) itemCount++;  //決定Array ItemData[]的大小
+                  if (image_id_result != null)
+                    if ((image_id_result.equals(inputByUser)) || (image_id_result.indexOf(inputByUser) >= 0)) {
+                        itemCount++;  //決定Array ItemData[]的大小
+                    }
                 }
 
                 if (itemCount>=1) {
-                    ItemData[] itemsData = new ItemData[itemCount - 1];
+                    ItemData[] itemsData = new ItemData[itemCount];
 
                     for (int i = 0; i < response.body().getRecords().length; i++) {
                         //將從AirTable讀取的資料放入Array itemsData，其中圖片資料是1個URL網址
