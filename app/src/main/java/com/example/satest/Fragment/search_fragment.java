@@ -48,6 +48,7 @@ public class search_fragment extends Fragment implements View.OnClickListener {
     private EditText Tags_input;
     private Button LastPage;
     private Button Search;
+    private Button Search2;
     private TextView tv2;
     private TextView tv1;
     private TextView searchbox2;
@@ -77,20 +78,41 @@ public class search_fragment extends Fragment implements View.OnClickListener {
         Search = (Button) searchView.findViewById(R.id.search);
         tv2 = searchView.findViewById(R.id.tv2);
         tv1 = searchView.findViewById(R.id.username1);
-
+        Search2=(Button) searchView.findViewById(R.id.searchfordesigner);
+        Search2.setOnClickListener(this);
         searchbox2 = searchView.findViewById(R.id.searchbox2);
         //showPicture = searchView.findViewById(R.id.imageView);
         Search.setOnClickListener(this);
 
         recyclerView = searchView.findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+               recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         //return inflater.inflate(R.layout.begin_search, container, false);
         return searchView;
     }
 
+//    public void onClick2(View v){
+//        final String inputByUser2=searchbox2.getText().toString();
+//        Api Api2 = RetrofitManager.getInstance().getAPI();
+//        Call<Records> call2 = Api2.user();
+//        call2.enqueue(new Callback<Records>() {
+//            @Override
+//            public void onResponse(Call<Records> call2, Response<Records> response2) {
+//
+//                if(inputByUser2.equals()){
+//
+//            }
+//
+//            @Override
+//            public void onFailure(Call<Records> call2, Throwable t1) {
+//
+//            }
+//        });
+//    }
+
     @Override
     public void onClick(View v) {
+
         Api Api = RetrofitManager.getInstance().getAPI();
         Call<Records_image> call = Api.image();
         call.enqueue(new Callback<Records_image>() {
@@ -145,6 +167,8 @@ public class search_fragment extends Fragment implements View.OnClickListener {
                 if (itemCount == 0 || m == 0)
                     Toast.makeText(getActivity(), "Cannot find any picture.", Toast.LENGTH_LONG).show();
             }
+
+
 
             @Override
             public void onFailure(Call<Records_image> call, Throwable t) {

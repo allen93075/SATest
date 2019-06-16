@@ -33,6 +33,7 @@ public class SignUp extends AppCompatActivity {
     private String U;
     private String P;
     private String E;
+    private String C;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +53,6 @@ public class SignUp extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 //拿資料庫資料
                 Api Api2 = RetrofitManager.getInstance().getAPI();
                 Call<Records> call2 = Api2.user();
@@ -68,47 +68,51 @@ public class SignUp extends AppCompatActivity {
                             U = Username_signup.getText().toString();
                             P = Passward_signup.getText().toString();
                             E = Email_input.getText().toString();
-                            for (int i = 0; i < check.getRecords().length; i++) {
-                                String user = check.getFields(i).getUsername();
-                                String email = check.getFields(i).getEmail();
-                                if (checkSignup) {
-                                    if (Username_signup.equals(user)) {
-
-                                        tv4.setText("此用戶名已經存在");
-                                        checkSignup = false;
-                                    }
-                                    if (email.equals(Email_input)) {
-
-                                        tv4.setText("此信箱已經註冊");
-                                        checkSignup = false;
-                                    }
-
-                                    if (!Passward_signup.equals(ConfirmPassword)) {
-
-                                        tv4.setText("二次密碼輸入錯誤");
-                                        checkSignup = false;
-
-                                    }
-                                }
+                            C = ConfirmPassword.getText().toString();
 
 
-//                                    if (pat.matcher(P).find() == false) {
-//
-//                                        tv4.setText("密碼有不法字元");
-//                                        checkSignup = false;
-//                                    }
+                            if (!P.equals(C)) {
+                                tv4.setText("二次密碼輸入錯誤");
+                                checkSignup = false;
                             }
-                            //檢查註冊事項
+
+                            if (pat.matcher(P).find()) {
+                                tv4.setText("密碼有不法字元");
+                                checkSignup = false;
+                            }
+
+                            if(checkSignup){
+                                for (int i = 0; i < check.getRecords().length; i++) {
+                                    String user = check.getFields(i).getUsername();
+                                    String email = check.getFields(i).getEmail();
+                                    if (checkSignup) {
+                                        if (Username_signup.equals(user)) {
+
+                                            tv4.setText("此用戶名已經存在");
+                                            checkSignup = false;
+                                        }
+                                        if (email.equals(Email_input)) {
+
+                                            tv4.setText("此信箱已經註冊");
+                                            checkSignup = false;
+                                        }
+
+
+                                    }
+
+
+                                }
+                                //檢查註冊事項
+                            }
                         } else {
                             tv4.setText("請填完所有欄位");
                         }
-
                         //是否能夠寫入
                         if (checkSignup == true) {
                             tv4.setText("成功");
                             //寫入註冊資料
                             Api Api = RetrofitManager.getInstance().getAPI();
-                            Call<Records> call2 = Api.Post(new Req(new User_data(U, P, E)));
+                            Call<Records> call2 = Api.Post(new Req(new User_data(U, E, P)));
                             call2.enqueue(new Callback<Records>() {
                                 @Override
                                 public void onResponse(Call<Records> call2, Response<Records> response2) {
