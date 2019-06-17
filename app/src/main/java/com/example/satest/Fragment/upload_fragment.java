@@ -32,11 +32,22 @@ import android.widget.Toast;
 
 import com.example.satest.MainActivity;
 import com.example.satest.R;
+import com.example.satest.Retrofit.Api;
+import com.example.satest.Retrofit.Image_attachment;
+import com.example.satest.Retrofit.Image_data;
+import com.example.satest.Retrofit.Records_image;
+import com.example.satest.Retrofit.RetrofitManager;
+import com.example.satest.Retrofit.Url;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageMetadata;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.http.Body;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -85,6 +96,28 @@ public class upload_fragment extends Fragment{
                         toast.setGravity(Gravity.CENTER, 0, 0);
                         toast.show();
                         uploadButton.setEnabled(true);
+
+                        Uri url = taskSnapshot.getUploadSessionUri();
+                        String s_url = url.toString();
+
+
+                        Api api = RetrofitManager.getInstance().getAPI();
+                        Call<Records_image> call= api.Post_image(new Url(new Image_data(textInput.getText().toString(),
+                                "1","1",new Image_attachment(s_url))));
+                        call.enqueue(new Callback<Records_image>() {
+                            @Override
+                            public void onResponse(Call<Records_image> call, Response<Records_image> response) {
+
+                            }
+
+                            @Override
+                            public void onFailure(Call<Records_image> call, Throwable t) {
+
+                            }
+                        });
+
+//                        toast = Toast.makeText(getActivity(), url.toString(), Toast.LENGTH_LONG);
+//                        toast.show();
                     }
                 });
             }
