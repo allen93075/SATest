@@ -1,27 +1,22 @@
 package com.example.satest.Fragment;
 
-import android.net.sip.SipSession;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.util.UUID;
 
-import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
-import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -30,9 +25,11 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.satest.MainActivity;
 import com.example.satest.R;
+import com.google.android.gms.tasks.Continuation;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageMetadata;
 import com.google.firebase.storage.StorageReference;
@@ -55,6 +52,8 @@ public class upload_fragment extends Fragment{
         Button selectButton = (Button) view.findViewById(R.id.select_image);
         final Button uploadButton = (Button) view.findViewById(R.id.upload_ready);
         final EditText textInput = (EditText) view.findViewById(R.id.description);
+        final TextView urlView = (TextView) view.findViewById(R.id.show_url);
+
         progressBar = (ProgressBar) view.findViewById(R.id.progressBar);
         progressBar.setVisibility(View.GONE);
 
@@ -70,13 +69,13 @@ public class upload_fragment extends Fragment{
                 byte[] data = baos.toByteArray();
 
                 String path = UUID.randomUUID() + ".png";
-                StorageReference firebaseRdf = storage.getReference(path);
+                final StorageReference firebaseRdf = storage.getReference(path);
                 StorageMetadata metadata = new StorageMetadata.Builder()
                         .setCustomMetadata("description", textInput.getText().toString()).build();
 
                 progressBar.setVisibility(View.VISIBLE);
                 uploadButton.setEnabled(false);
-                UploadTask uploadTask = firebaseRdf.putBytes(data, metadata);
+                final UploadTask uploadTask = firebaseRdf.putBytes(data, metadata);
                 uploadTask.addOnSuccessListener(getActivity(), new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
@@ -85,6 +84,24 @@ public class upload_fragment extends Fragment{
                         toast.setGravity(Gravity.CENTER, 0, 0);
                         toast.show();
                         uploadButton.setEnabled(true);
+
+                        Task<Uri> uriTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
+                            @Override
+                            public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
+                                if(!task.isSuccessful()){
+                                    throw task.getException();
+                                }
+                                return firebaseRdf.getDownloadUrl();
+                            }
+                        }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Uri> task) {
+                                    if(task.isSuccessful()){
+                                        Uri downloadUri = task.getResult();
+                                        urlView.setText(downloadUri.toString());
+                                    }
+                            }
+                        });
                     }
                 });
             }
