@@ -12,6 +12,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
+import retrofit2.http.Url;
 
 public interface Api {
     @GET("User?api_key=keycL5kGwKuZlYMdn")
@@ -34,4 +35,10 @@ public interface Api {
     })
     Call<Records> Post(@Body Req fields);
 
+    @POST("User?api_key=keycL5kGwKuZlYMdn")
+    @Headers({
+            "Accept: application/json; charset=utf-8",
+            "Content-Type: application/json; charset=utf-8"
+    })
+    Call<Records_image> Post_image(@Body Url fields);
 }

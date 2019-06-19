@@ -26,6 +26,12 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.satest.R;
+import com.example.satest.Retrofit.Api;
+import com.example.satest.Retrofit.Image_attachment;
+import com.example.satest.Retrofit.Image_data;
+import com.example.satest.Retrofit.Records_image;
+import com.example.satest.Retrofit.RetrofitManager;
+import com.example.satest.Retrofit.Url;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -35,6 +41,10 @@ import com.google.firebase.storage.StorageMetadata;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 import static android.app.Activity.RESULT_OK;
 
 public class upload_fragment extends Fragment{
@@ -43,6 +53,7 @@ public class upload_fragment extends Fragment{
     public ImageView imageView;
     public Bitmap bitmap;
     public ProgressBar progressBar;
+    public Button uploadButton;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -50,12 +61,14 @@ public class upload_fragment extends Fragment{
         final View view = inflater.inflate(R.layout.upload_fragment, container, false);
 
         Button selectButton = (Button) view.findViewById(R.id.select_image);
-        final Button uploadButton = (Button) view.findViewById(R.id.upload_ready);
+        uploadButton = (Button) view.findViewById(R.id.upload_ready);
         final EditText textInput = (EditText) view.findViewById(R.id.description);
         final TextView urlView = (TextView) view.findViewById(R.id.show_url);
 
         progressBar = (ProgressBar) view.findViewById(R.id.progressBar);
         progressBar.setVisibility(View.GONE);
+
+        uploadButton.setEnabled(false);
 
         uploadButton.setOnClickListener(new Button.OnClickListener() {
             @Override
@@ -99,6 +112,22 @@ public class upload_fragment extends Fragment{
                                     if(task.isSuccessful()){
                                         Uri downloadUri = task.getResult();
                                         urlView.setText(downloadUri.toString());
+
+                                        Api api = RetrofitManager.getInstance().getAPI();
+                                        Image_attachment image_attachment = new Image_attachment(downloadUri.toString());
+                                        Call<Records_image> call = api.Post_image(new Url(new Image_data(textInput.getText().toString(),
+                                                "1","1", )));
+                                        call.enqueue(new Callback<Records_image>() {
+                                            @Override
+                                            public void onResponse(Call<Records_image> call, Response<Records_image> response) {
+
+                                            }
+
+                                            @Override
+                                            public void onFailure(Call<Records_image> call, Throwable t) {
+
+                                            }
+                                        });
                                     }
                             }
                         });
@@ -138,8 +167,10 @@ public class upload_fragment extends Fragment{
                 bitmap = BitmapFactory.decodeStream(cr.openInputStream(uri));
                 //取得圖片控制項ImageView
                 imageView = (ImageView) getView().findViewById(R.id.upload_image);
-                // 將Bitmap設定到ImageView
+                //將Bitmap設定到ImageView
                 imageView.setImageBitmap(bitmap);
+                //允許使用者按下上傳
+                uploadButton.setEnabled(true);
             } catch (FileNotFoundException e) {
                 Log.e("Exception", e.getMessage(),e);
             }
