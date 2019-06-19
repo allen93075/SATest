@@ -5,6 +5,7 @@ public class Image_data {
     private picture_data[] Image;
     private String Image_id;
     private String Description;
+    private String[] User;
 
     public String getDescription() {
         return Description;
@@ -16,6 +17,10 @@ public class Image_data {
 
     public picture_data[] getImage() {
         return Image;
+    }
+
+    public String[] getUser() {
+        return User;
     }
 
     public Image_data(String Description, String Image_id) {

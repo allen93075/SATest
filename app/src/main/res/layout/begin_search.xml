@@ -18,20 +18,38 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <Button
-            android:id="@+id/lastbotton"
-            android:layout_width="76dp"
+        <RadioGroup
+            android:id="@+id/radioGroup1"
+            android:layout_marginTop="37dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Last Page" />
+            android:orientation="vertical" >
+
+            <RadioButton
+                android:id="@+id/Search_Image_id"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Image_id" />
+
+            <RadioButton
+                android:id="@+id/Search_User"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="User" />
+
+        </RadioGroup>
 
         <EditText
             android:id="@+id/searchbox2"
-            android:layout_width="256dp"
+            android:layout_marginTop="37dp"
+            android:layout_width="210dp"
             android:layout_height="match_parent"
+            android:layout_marginLeft="22dp"
             android:text="TextView" />
 
         <Button
             android:id="@+id/search"
+            android:layout_marginTop="37dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Search" />
