@@ -1,13 +1,15 @@
 package com.example.satest.Retrofit;
 
+import android.net.Uri;
+
 public class Image_attachment {
 
-    private String url;
+    private Uri url;
 
-    public String getUrl(){
+    public Uri getUrl(){
         return url;
     }
-    public Image_attachment(String url){
+    public Image_attachment(Uri url){
         this.url = url;
     }
 }

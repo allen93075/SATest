@@ -1,5 +1,7 @@
 package com.example.satest.Fragment;
 
+import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -14,6 +16,7 @@ import java.util.UUID;
 
 import android.content.ContentResolver;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -25,6 +28,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.satest.MainActivity;
 import com.example.satest.R;
 import com.example.satest.Retrofit.Api;
 import com.example.satest.Retrofit.Image_attachment;
@@ -54,6 +58,7 @@ public class upload_fragment extends Fragment{
     public Bitmap bitmap;
     public ProgressBar progressBar;
     public Button uploadButton;
+    public String username;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -114,13 +119,13 @@ public class upload_fragment extends Fragment{
                                         urlView.setText(downloadUri.toString());
 
                                         Api api = RetrofitManager.getInstance().getAPI();
-                                        Image_attachment image_attachment = new Image_attachment(downloadUri.toString());
+
                                         Call<Records_image> call = api.Post_image(new Url(new Image_data(textInput.getText().toString(),
-                                                "1","1", )));
+                                                "1","1", downloadUri)));
                                         call.enqueue(new Callback<Records_image>() {
                                             @Override
                                             public void onResponse(Call<Records_image> call, Response<Records_image> response) {
-
+                                                //System.out.println(response);
                                             }
 
                                             @Override
