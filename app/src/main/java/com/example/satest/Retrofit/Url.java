@@ -2,17 +2,17 @@ package com.example.satest.Retrofit;
 
 public class Url {
 
-    private Image_data fields;
+    private Image_upload fields;
 
-    public Url(Image_data fields) {
+    public Url(Image_upload fields) {
         this.fields = fields;
     }
 
-    public Image_data getFields(){
+    public Image_upload getFields(){
         return fields;
     }
 
-    public void setFields(Image_data fields) {
+    public void setFields(Image_upload fields) {
         this.fields = fields;
     }
 }
