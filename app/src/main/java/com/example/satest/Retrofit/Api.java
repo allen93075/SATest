@@ -36,4 +36,10 @@ public interface Api {
     })
     Call<Records> Post(@Body Req fields);
 
+    @POST("Image?api_key=keycL5kGwKuZlYMdn")
+    @Headers({
+            "Accept: application/json; charset=utf-8",
+            "Content-Type: application/json; charset=utf-8"
+    })
+    Call<Records_image> Post_image(@Body Url fields);
 }
