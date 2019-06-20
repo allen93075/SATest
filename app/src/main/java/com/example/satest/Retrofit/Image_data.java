@@ -30,10 +30,12 @@ public class Image_data {
         return Image2;
     }
 
+
     public Image_data(String Description, String Image_id, String User_text, Uri Image) {
         this.Description = Description;
         this.Image_id = Image_id;
         this.User_text = User_text;
         this.Image = Image;
     }
+
 }

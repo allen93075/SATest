@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView tv3;
     private Boolean a = false;
     private Boolean b;
+    private Boolean check = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +62,9 @@ public class MainActivity extends AppCompatActivity {
                 call.enqueue(new Callback<Records>() {
                     @Override
                     public void onResponse(Call<Records> call, Response<Records> response) {
+
                         for (int i = 0; i < response.body().getRecords().length; i++) {
+
                             String user = response.body().getFields(i).getUsername();
                             String password = response.body().getFields(i).getPassword();
                             if (Username_input == null) {
