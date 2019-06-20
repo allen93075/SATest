@@ -33,6 +33,7 @@ import com.example.satest.R;
 import com.example.satest.Retrofit.Api;
 import com.example.satest.Retrofit.Image_attachment;
 import com.example.satest.Retrofit.Image_data;
+import com.example.satest.Retrofit.Image_upload;
 import com.example.satest.Retrofit.Records_image;
 import com.example.satest.Retrofit.RetrofitManager;
 import com.example.satest.Retrofit.Url;
@@ -120,7 +121,7 @@ public class upload_fragment extends Fragment{
 
                                         Api api = RetrofitManager.getInstance().getAPI();
 
-                                        Call<Records_image> call = api.Post_image(new Url(new Image_data(textInput.getText().toString(),
+                                        Call<Records_image> call = api.Post_image(new Url(new Image_upload(textInput.getText().toString(),
                                                 "1","1", downloadUri)));
                                         call.enqueue(new Callback<Records_image>() {
                                             @Override
