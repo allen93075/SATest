@@ -26,7 +26,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.DescriptionView.setText(itemsData[position].itemGetDescription());
+        holder.UserView.setText("Post By User: " + itemsData[position].itemGetUser());
+        holder.DescriptionView.setText("Description: " + itemsData[position].itemGetDescription());
         Picasso.get().load(itemsData[position].itemGetUrl()).into(holder.imageView);
     }
 
@@ -37,11 +38,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public ImageView imageView;
-        public TextView DescriptionView;
+        public TextView DescriptionView, UserView;
         public ViewHolder(View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.imageView);
             DescriptionView = itemView.findViewById(R.id.DescriptionView);
+            UserView = itemView.findViewById(R.id.UserView);
             //imageView = searchView.findViewById(R.id.imageView);
         }
     }
