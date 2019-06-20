@@ -5,18 +5,7 @@ public class Image_data {
     private picture_data[] Image;
     private String Image_id;
     private String Description;
-    private String User_text;
-
-    public String getUser_text() {
-        return User_text;
-    }
-
-
-
-
-
-
-
+    private String[] User;
 
     public String getDescription() {
         return Description;
@@ -30,11 +19,13 @@ public class Image_data {
         return Image;
     }
 
-    public Image_data(String Description, String Image_id,String User_text) {
+    public String[] getUser() {
+        return User;
+    }
+
+    public Image_data(String Description, String Image_id) {
         this.Description = Description;
         this.Image_id = Image_id;
-        this.User_text = User_text;
-
 
     }
 }

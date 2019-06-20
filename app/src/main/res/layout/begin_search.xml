@@ -18,21 +18,38 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <RadioGroup
+            android:id="@+id/radioGroup1"
+            android:layout_marginTop="37dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RadioButton
+                android:id="@+id/Search_Image_id"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Image_id" />
+
+            <RadioButton
+                android:id="@+id/Search_User"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="User" />
+
+        </RadioGroup>
+
         <EditText
             android:id="@+id/searchbox2"
-            android:layout_width="256dp"
+            android:layout_marginTop="37dp"
+            android:layout_width="210dp"
             android:layout_height="match_parent"
-            android:hint="Enter here"/>
-
-
-        <Button
-            android:id="@+id/searchfordesigner"
-            android:layout_width="76dp"
-            android:layout_height="wrap_content"
-            android:text="D_Search" />
+            android:layout_marginLeft="22dp"
+            android:text="TextView" />
 
         <Button
             android:id="@+id/search"
+            android:layout_marginTop="37dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Search" />
@@ -40,61 +57,60 @@
 
     <TextView
         android:id="@+id/tv2"
-        android:layout_width="321dp"
-        android:layout_height="64dp"
-        android:layout_marginStart="92dp"
-        android:layout_marginLeft="92dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="119dp"
-        android:layout_marginRight="119dp"
-        android:layout_marginBottom="33dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="228dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="34dp"
+        android:layout_marginRight="34dp"
+        android:text="TextView"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.531"
+        app:layout_constraintHorizontal_bias="0.267"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username1" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
-    <TextView
-        android:id="@+id/username1"
-        android:layout_width="175dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="189dp"
-        android:layout_marginRight="189dp"
-        android:layout_marginBottom="9dp"
-        app:layout_constraintBottom_toTopOf="@+id/tv2"
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="98dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="12dp"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.043"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="346dp"
-        android:layout_height="354dp"
+        android:layout_width="390dp"
+        android:layout_height="412dp"
         android:layout_alignParentLeft="true"
         android:layout_marginStart="40dp"
         android:layout_marginLeft="40dp"
+        android:layout_marginTop="76dp"
         android:layout_marginEnd="387dp"
         android:layout_marginRight="387dp"
         android:maxWidth="100dp"
         android:maxHeight="100dp"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.042"
+        app:layout_constraintHorizontal_bias="0.066"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="280dp"
-        android:layout_height="272dp"
-        android:layout_marginEnd="80dp"
-        android:layout_marginRight="80dp"
+        android:layout_width="406dp"
+        android:layout_height="443dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
