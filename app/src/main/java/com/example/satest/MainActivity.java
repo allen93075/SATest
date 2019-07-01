@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.content.SharedPreferences;
 
 import com.example.satest.Fragment.Front;
 import com.example.satest.Retrofit.Api;
@@ -46,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent intent = new Intent();
-                intent.setClass(MainActivity.this, SignUp.class);
+                intent.setClass(MainActivity.this, Main.class);
                 startActivity(intent);
             }
         });
@@ -94,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
 
                                 if (password != null && password.equals(Passward_input.getText().toString())) {
                                     Intent intent = new Intent();
-                                    intent.setClass(MainActivity.this, Front.class);
+                                    intent.setClass(MainActivity.this,Front.class);
                                     startActivity(intent);
                                     break;
                                 } else {

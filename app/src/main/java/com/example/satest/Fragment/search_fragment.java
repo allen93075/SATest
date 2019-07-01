@@ -207,6 +207,22 @@ public class search_fragment extends Fragment implements View.OnClickListener {
                         if (itemCount == 0 || m == 0)
                             Toast.makeText(getActivity(),"Cannot find any picture.",Toast.LENGTH_LONG).show();
                         break;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                     case "Search_User":
                         //須將User輸入的資料(ex. kevinichao)轉換成id資料(recfgeZOansiNUD5A)，再依據id資料到
                         //Image Table尋找圖片

@@ -18,6 +18,7 @@
         <activity
             android:name=".Fragment.Front"
             android:label="@string/title_activity_front"></activity>
+        <activity android:name=".Main"></activity>
         <activity
             android:name=".SignUp"
             android:label="@string/title_activity_sign_up"
