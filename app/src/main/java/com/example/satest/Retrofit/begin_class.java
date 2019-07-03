@@ -112,9 +112,9 @@ public class begin_class extends AppCompatActivity {
 //                }
 //            });
 //        }
-        Tags_input= (EditText) findViewById(R.id.searchbox2);
-        Username_input = (EditText) findViewById(R.id.searchbox2);
-        LastPage = (Button) findViewById(R.id.searchfordesigner);
+        Tags_input= findViewById(R.id.searchbox2);
+        Username_input = findViewById(R.id.searchbox2);
+        LastPage = findViewById(R.id.searchfordesigner);
         LastPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -124,7 +124,7 @@ public class begin_class extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        tv2 = (TextView) findViewById(R.id.tv2);
-        Search = (Button) findViewById(R.id.search);
+        tv2 = findViewById(R.id.tv2);
+        Search = findViewById(R.id.search);
     }
 }

@@ -41,14 +41,14 @@ public class SignUp extends AppCompatActivity {
         setContentView(R.layout.sign_up);
 
 
-        Username_signup = (EditText) findViewById(R.id.Username_signup);
-        Passward_signup = (EditText) findViewById(R.id.Password_signup);
-        Email_input = (EditText) findViewById(R.id.Email_input);
-        ConfirmPassword = (EditText) findViewById(R.id.ConfirmPassword);
-        register = (Button) findViewById(R.id.register);
+        Username_signup = findViewById(R.id.Username_signup);
+        Passward_signup = findViewById(R.id.Password_signup);
+        Email_input = findViewById(R.id.Email_input);
+        ConfirmPassword = findViewById(R.id.ConfirmPassword);
+        register = findViewById(R.id.register);
         tv4 = findViewById(R.id.tv4);
 
-        register = (Button) findViewById(R.id.register);
+        register = findViewById(R.id.register);
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override

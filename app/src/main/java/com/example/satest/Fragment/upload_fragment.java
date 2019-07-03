@@ -66,12 +66,12 @@ public class upload_fragment extends Fragment{
                              Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.upload_fragment, container, false);
 
-        Button selectButton = (Button) view.findViewById(R.id.select_image);
-        uploadButton = (Button) view.findViewById(R.id.upload_ready);
-        final EditText textInput = (EditText) view.findViewById(R.id.description);
-        final TextView urlView = (TextView) view.findViewById(R.id.show_url);
+        Button selectButton = view.findViewById(R.id.select_image);
+        uploadButton = view.findViewById(R.id.upload_ready);
+        final EditText textInput = view.findViewById(R.id.description);
+        final TextView urlView = view.findViewById(R.id.show_url);
 
-        progressBar = (ProgressBar) view.findViewById(R.id.progressBar);
+        progressBar = view.findViewById(R.id.progressBar);
         progressBar.setVisibility(View.GONE);
 
         uploadButton.setEnabled(false);
@@ -172,7 +172,7 @@ public class upload_fragment extends Fragment{
                 //由抽象資料接口轉換圖檔路徑為Bitmap
                 bitmap = BitmapFactory.decodeStream(cr.openInputStream(uri));
                 //取得圖片控制項ImageView
-                imageView = (ImageView) getView().findViewById(R.id.upload_image);
+                imageView = getView().findViewById(R.id.upload_image);
                 //將Bitmap設定到ImageView
                 imageView.setImageBitmap(bitmap);
                 //允許使用者按下上傳

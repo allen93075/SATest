@@ -35,10 +35,10 @@ public class MainActivity extends AppCompatActivity {
             setContentView(R.layout.activity_main);
 
 
-        Username_input = (EditText) findViewById(R.id.Username_signup);
-        Passward_input = (EditText) findViewById(R.id.Password_signup);
-        Signup = (Button) findViewById(R.id.Signup);
-        tv3 = (TextView) findViewById(R.id.tv3);
+        Username_input = findViewById(R.id.Username_signup);
+        Passward_input = findViewById(R.id.Password_signup);
+        Signup = findViewById(R.id.Signup);
+        tv3 = findViewById(R.id.tv3);
 
         Signup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Login = (Button) findViewById(R.id.Login);
+        Login = findViewById(R.id.Login);
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

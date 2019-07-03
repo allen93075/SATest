@@ -7,13 +7,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.example.satest.Retrofit.Records_image;
 import com.squareup.picasso.Picasso;
+
+import retrofit2.Callback;
 
 public class ViewPagerAdapter extends PagerAdapter {
     private Context context;
     private  String[] imageUrls;
-    ViewPagerAdapter(Context context,String[]imageUrls){
-        this.context=context;
+    public ViewPagerAdapter(Context context, String[]imageUrls){
+        this.context=  context;
         this.imageUrls=imageUrls;
     }
 
@@ -32,8 +35,8 @@ public class ViewPagerAdapter extends PagerAdapter {
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
         ImageView imageView =new ImageView(context);
         Picasso.get().load(imageUrls[position]).fit().centerCrop().into(imageView);
-    container.addView(imageView);
-    return imageView;
+        container.addView(imageView);
+        return imageView;
     }
 
     @Override

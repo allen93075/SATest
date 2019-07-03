@@ -18,8 +18,8 @@ public class search extends AppCompatActivity {
         setContentView(R.layout.activity_search);
 
 
-        Search_input=(EditText)findViewById(R.id.searchbox2);
-        Search = (Button)findViewById(R.id.search);
+        Search_input= findViewById(R.id.searchbox2);
+        Search = findViewById(R.id.search);
         Search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -79,7 +79,7 @@ public class search_fragment extends Fragment implements View.OnClickListener {
         Toast.makeText(getActivity(),"Please input the search key in TextView field.",Toast.LENGTH_LONG).show();
         //super.onCreate(savedInstanceState);
         searchView = inflater.inflate(R.layout.begin_search, container, false);
-        Search = (Button) searchView.findViewById(R.id.search);
+        Search = searchView.findViewById(R.id.search);
         tv2 = searchView.findViewById(R.id.tv2);
         searchbox2 = searchView.findViewById(R.id.searchbox2);
         //showPicture = searchView.findViewById(R.id.imageView);
@@ -169,8 +169,8 @@ public class search_fragment extends Fragment implements View.OnClickListener {
                                         id_found = User_Name_ID[k].indexOf(User[0]);
                                         if (id_found >= 0) {
                                             id_found = User_Name_ID[k].indexOf("/");
-                                            user_name = User_Name_ID[k].substring(id_found + 1,
-                                                      User_Name_ID[k].length()); //取出後面的User Name資料
+                                            user_name = User_Name_ID[k].substring(id_found + 1
+                                            ); //取出後面的User Name資料
                                             k = userCount;
                                         }
                                     }
@@ -237,8 +237,8 @@ public class search_fragment extends Fragment implements View.OnClickListener {
                                 user_id = User_Name_ID[i].substring(0,id_found-1); //取出前面的id資料
                                 //MOD-20190618: Begin
                                 userName_found = User_Name_ID[i].indexOf("/");
-                                user_name = User_Name_ID[i].substring(userName_found + 1,
-                                            User_Name_ID[i].length()); //取出後面的User Name資料
+                                user_name = User_Name_ID[i].substring(userName_found + 1
+                                ); //取出後面的User Name資料
                                 if (user_name.indexOf(inputByUser)>=0) {
                                     userIdList.add(user_id); //將找到的User Id加入清單中
                                     idInList = 1;
